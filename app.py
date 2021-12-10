@@ -9,7 +9,7 @@ from PIL import Image
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-model = load_model('model.h5',compile=False)
+model = load_model('model2.h5',compile=False)
 
 def preprocess(img,input_size):
     nimg = cv2.resize(img, (250, 250))
