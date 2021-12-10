@@ -1,5 +1,11 @@
 # Deployment Model CNN (Dataset Animals-10)
 
+## Nama Kelompok 
+
+- Annisaa Ul Mubaarokah 201810370311140
+- Riska Septiana Putri  201810370311175
+
+
 ## Deskripsi singkat
 
 Repository ini berisi semua file yang dibutuhkan untuk melakukan deployment model Machine Learning Image Classification menggunakan CNN (Convolutional Neural Network). Adapun model yang digunakan merupakan model untuk memprediksi gambar binatang.
