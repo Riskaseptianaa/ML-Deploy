@@ -12,7 +12,7 @@ app.config['UPLOAD_FOLDER'] = './static/uploads/'
 model = load_model('model2.h5',compile=False)
 
 def preprocess(img,input_size):
-    nimg = cv2.resize(img, (250, 250))
+    nimg = cv2.resize(img, (100, 100))
     img_arr = (np.array(nimg))/255
     return img_arr
 
@@ -20,7 +20,7 @@ def reshape(imgs_arr):
     return np.stack(imgs_arr, axis=0)
 
 def predict_label(img_path):
-    input_size = (250,250)
+    input_size = (100,100)
     channel = (3,)
     input_shape = input_size + channel
     labels = ['scoiattolo','ragno','pecora','mucca','gatto','gallina','farfalla','elefante','cavallo','cane']
@@ -28,7 +28,7 @@ def predict_label(img_path):
     x = preprocess(im,input_size)
     x = reshape([x])
     y = model.predict(x)
-    return labels[np.argmax(y)*100], np.max(y)
+    return labels[np.argmax(y)], np.max(y)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
